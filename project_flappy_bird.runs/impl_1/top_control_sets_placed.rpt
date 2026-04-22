@@ -1,0 +1,95 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Sat Apr 18 22:53:37 2026
+| Host         : LAPTOP-82GA5LCI running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    17 |
+|    Minimum number of control sets                        |    17 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    80 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    17 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     5 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     2 |
+| >= 10 to < 12      |     5 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     3 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              42 |           16 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              10 |            3 |
+| Yes          | No                    | No                     |              22 |            9 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              94 |           34 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------------------+-------------------------------------------+-------------------------------------------+------------------+----------------+--------------+
+|          Clock Signal         |               Enable Signal               |              Set/Reset Signal             | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------------------+-------------------------------------------+-------------------------------------------+------------------+----------------+--------------+
+| ~VGA_VS_OBUF_BUFG             | bird_y[9]_i_2_n_0                         | bird_y[7]_i_1_n_0                         |                2 |              4 |         2.00 |
+| ~VGA_VS_OBUF_BUFG             | bird_y[9]_i_2_n_0                         | bird_y[9]_i_1_n_0                         |                3 |              4 |         1.33 |
+| ~VGA_VS_OBUF_BUFG             | score_ones[3]_i_1_n_0                     | score_ones                                |                1 |              4 |         4.00 |
+| ~VGA_VS_OBUF_BUFG             | score_tens                                | score_ones                                |                1 |              4 |         4.00 |
+| ~VGA_VS_OBUF_BUFG             | score_hundreds                            | score_ones                                |                1 |              4 |         4.00 |
+| ~VGA_VS_OBUF_BUFG             |                                           |                                           |                4 |              6 |         1.50 |
+|  clk_100MHz_IBUF_BUFG         | audio_engine/duration_counter[24]_i_1_n_0 | play_jump                                 |                4 |              8 |         2.00 |
+| ~VGA_VS_OBUF_BUFG             | gap_y                                     | score_ones                                |                4 |              9 |         2.25 |
+|  clk_gen/clk_25MHz_reg_0_BUFG |                                           |                                           |                4 |             10 |         2.50 |
+|  clk_gen/clk_25MHz_reg_0_BUFG |                                           | vga_ctrl/x_pos[9]_i_1_n_0                 |                3 |             10 |         3.33 |
+|  clk_gen/clk_25MHz_reg_0_BUFG | vga_ctrl/x_pos[9]_i_1_n_0                 |                                           |                5 |             10 |         2.00 |
+| ~VGA_VS_OBUF_BUFG             | game_state_reg_n_0                        | pipe_x[9]_i_1_n_0                         |                4 |             10 |         2.50 |
+| ~VGA_VS_OBUF_BUFG             | velocity                                  | velocity[9]_i_1_n_0                       |                3 |             10 |         3.33 |
+| ~VGA_VS_OBUF_BUFG             | hi_hundreds                               |                                           |                4 |             12 |         3.00 |
+|  clk_100MHz_IBUF_BUFG         | audio_engine/duration_counter[23]_i_2_n_0 | audio_engine/duration_counter[23]_i_1_n_0 |                6 |             17 |         2.83 |
+|  clk_100MHz_IBUF_BUFG         | audio_engine/tone_counter                 | audio_engine/tone_counter[0]_i_1_n_0      |                5 |             20 |         4.00 |
+|  clk_100MHz_IBUF_BUFG         |                                           |                                           |                8 |             26 |         3.25 |
++-------------------------------+-------------------------------------------+-------------------------------------------+------------------+----------------+--------------+
+
+
